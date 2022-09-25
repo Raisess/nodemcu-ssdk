@@ -36,3 +36,7 @@ make
 make upload
 make serial
 ```
+
+## ESP8266 Pinout
+
+<img src="./docs/assets/NodeMCU-ESP8266-pinout.png" width="500px" height="400px" />
