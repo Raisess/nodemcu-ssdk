@@ -15,13 +15,13 @@ args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
 build:
 	arduino-cli compile --fqbn $(BOARD):$(BOARD_TYPE) --libraries $(LIBRARIES) $(call args,$(PROJECT_NAME))
 
-# e.g.: build-test board/pin
-build-test:
-	arduino-cli compile --fqbn $(BOARD):$(BOARD_TYPE) --libraries $(LIBRARIES) $(LIBRARIES)/tests/$(call args)
-
 upload:
 	sudo chmod 666 $(PORT)
 	arduino-cli upload -p $(PORT) --fqbn $(BOARD):$(BOARD_TYPE) $(call args,$(PROJECT_NAME))
+
+# e.g.: build-test board/pin
+build-test:
+	arduino-cli compile --fqbn $(BOARD):$(BOARD_TYPE) --libraries $(LIBRARIES) $(LIBRARIES)/tests/$(call args)
 
 # e.g.: upload-test board/pin
 upload-test:
