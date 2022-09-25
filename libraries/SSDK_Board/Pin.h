@@ -11,19 +11,20 @@ public:
     OUTPUT_MODE,
   };
 
+  void log() const;
+
+protected:
   enum Data {
     LOW_DATA = 0,
     HIGH_DATA,
   };
 
+  Data _data = Data::LOW_DATA;
+
   Pin(int pin);
 
   virtual void high() = 0;
   virtual void low() = 0;
-  void log() const;
-
-protected:
-  Data _data = Data::LOW_DATA;
 
 private:
   int _pin;
