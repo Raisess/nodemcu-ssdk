@@ -9,13 +9,16 @@ BAUD_RATE=9600
 build:
 	arduino-cli compile --fqbn $(BOARD):$(BOARD_TYPE) $(PROJECT_NAME)
 
-build-test: $(eval PROJECT_NAME=test) build
+build-test:
+	arduino-cli compile --fqbn $(BOARD):$(BOARD_TYPE) test
 
 upload:
 	sudo chmod 666 $(PORT)
 	arduino-cli upload -p $(PORT) --fqbn $(BOARD):$(BOARD_TYPE) $(PROJECT_NAME)
 
-upload-test: $(eval PROJECT_NAME=test) upload
+upload-test:
+	sudo chmod 666 $(PORT)
+	arduino-cli upload -p $(PORT) --fqbn $(BOARD):$(BOARD_TYPE) test
 
 install:
 	arduino-cli core update-index
