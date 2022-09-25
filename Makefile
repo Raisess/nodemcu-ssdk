@@ -15,18 +15,18 @@ args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
 build:
 	arduino-cli compile --fqbn $(BOARD):$(BOARD_TYPE) --libraries $(LIBRARIES) $(call args,$(PROJECT_NAME))
 
-# e.g.: build-test SSDK_Board/pin_test
+# e.g.: build-test pin
 build-test:
-	arduino-cli compile --fqbn $(BOARD):$(BOARD_TYPE) --libraries $(LIBRARIES) $(LIBRARIES)/$(call args)
+	arduino-cli compile --fqbn $(BOARD):$(BOARD_TYPE) --libraries $(LIBRARIES) $(LIBRARIES)/tests/$(call args)
 
 upload:
 	sudo chmod 666 $(PORT)
 	arduino-cli upload -p $(PORT) --fqbn $(BOARD):$(BOARD_TYPE) $(call args,$(PROJECT_NAME))
 
-# e.g.: upload-test SSDK_Board/pin_test
+# e.g.: upload-test pin
 upload-test:
 	sudo chmod 666 $(PORT)
-	arduino-cli upload -p $(PORT) --fqbn $(BOARD):$(BOARD_TYPE) $(LIBRARIES)/$(call args)
+	arduino-cli upload -p $(PORT) --fqbn $(BOARD):$(BOARD_TYPE) $(LIBRARIES)/tests/$(call args)
 
 init:
 	arduino-cli config init
