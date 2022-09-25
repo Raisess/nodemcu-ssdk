@@ -15,13 +15,13 @@ You also can use with arduino boards or others esp boards, just with some little
 Cloning the repository:
 
 ```shell
-git clone https://github.com/Raisess/nodemcu-ssdk
+git clone https://github.com/Raisess/robo
+cd robo
 ```
 
-Setup the sdk:
+Configuration setup:
 
 ```shell
-cd nodemcu-ssdk
 make init
 ```
 
@@ -41,6 +41,8 @@ make
 make upload
 make serial
 ```
+
+Edit the `main/main.ino`, do the last step again. :)
 
 ## ESP8266
 

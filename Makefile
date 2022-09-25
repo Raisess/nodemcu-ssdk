@@ -13,7 +13,7 @@ BOARD_TYPE=nodemcuv2
 args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
 
 build:
-	arduino-cli compile --fqbn $(BOARD):$(BOARD_TYPE) --libraries $(LIBRARIES) $(call args,$(PROJECT_NAME))
+	arduino-cli compile --clean --fqbn $(BOARD):$(BOARD_TYPE) --libraries $(LIBRARIES) $(call args,$(PROJECT_NAME))
 
 upload:
 	sudo chmod 666 $(PORT)
@@ -21,7 +21,7 @@ upload:
 
 # e.g.: build-test board/pin
 build-test:
-	arduino-cli compile --fqbn $(BOARD):$(BOARD_TYPE) --libraries $(LIBRARIES) $(LIBRARIES)/tests/$(call args)
+	arduino-cli compile --clean --fqbn $(BOARD):$(BOARD_TYPE) --libraries $(LIBRARIES) $(LIBRARIES)/tests/$(call args)
 
 # e.g.: upload-test board/pin
 upload-test:
