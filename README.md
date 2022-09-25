@@ -1,6 +1,6 @@
-# NODEMCU SIMPLE SDK
+# ROBO
 
-This is only a simple "framework" to make the life easier when using `arduino-cli` and esp8266 boards.
+A simple "framework" to make the life easier when using `arduino-cli` and esp8266 boards.
 You also can use with arduino boards or others esp boards, just with some little changes at the `Makefile`.
 
 ## Dependencies
@@ -15,7 +15,7 @@ You also can use with arduino boards or others esp boards, just with some little
 Cloning the repository:
 
 ```shell
-git clone --recursive https://github.com/Raisess/nodemcu-ssdk
+git clone https://github.com/Raisess/nodemcu-ssdk
 ```
 
 Setup the sdk:
@@ -43,6 +43,8 @@ make serial
 ```
 
 ## ESP8266
+
+The main target of this project.
 
 ### ESP8266 Pinout
 
