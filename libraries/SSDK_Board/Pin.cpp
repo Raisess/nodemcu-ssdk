@@ -1,8 +1,6 @@
 #include "Arduino.h"
 #include "Pin.h"
 
-namespace Core {
-
 Board::Pin::Pin(int pin) : _pin(pin) {}
 
 void Board::Pin::log() const {
@@ -40,6 +38,4 @@ void Board::DigitalPin::high() {
 void Board::DigitalPin::low() {
   _data = Pin::LOW_DATA;
   digitalWrite(_pin, LOW);
-}
-
 }

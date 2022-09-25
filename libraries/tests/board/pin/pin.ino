@@ -1,6 +1,6 @@
 #include <Pin.h>
 
-Core::Board::DigitalPin pin(10, Core::Board::Pin::INPUT_MODE);
+Board::DigitalPin pin(10, Board::Pin::INPUT_MODE);
 
 void setup() {
   Serial.begin(9600);

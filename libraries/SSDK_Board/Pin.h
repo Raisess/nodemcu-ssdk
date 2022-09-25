@@ -1,7 +1,6 @@
 #ifndef Pin_h
 #define Pin_h
 
-namespace Core {
 namespace Board {
 
 class Pin {
@@ -52,7 +51,6 @@ private:
   unsigned int _pin;
 };
 
-}
 }
 
 #endif
