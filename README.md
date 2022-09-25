@@ -1,11 +1,16 @@
 # NODEMCU SIMPLE SDK
 
+This is only a simple "framework" to make the life easier when using `arduino-cli` and esp8266 boards.
+You also can use with arduino boards or others esp boards, just with some little changes at the `Makefile`.
+
 ## Dependencies
 
 - [Arduino CLI](https://github.com/arduino/arduino-cli)
 - [Picocom](https://github.com/npat-efault/picocom)
 
-## Setup
+## Getting Started
+
+### Setup
 
 Cloning the repository:
 
@@ -37,6 +42,8 @@ make upload
 make serial
 ```
 
-## ESP8266 Pinout
+## ESP8266
+
+### ESP8266 Pinout
 
 <img src="./docs/assets/NodeMCU-ESP8266-pinout.png" width="500px" height="400px" />

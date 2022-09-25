@@ -1,12 +1,14 @@
 PROJECT_NAME=main
 
+# use "," to add another lib paths
 LIBRARIES=./libraries
-
-BOARD=esp8266:esp8266
-BOARD_TYPE=nodemcuv2
 
 PORT=/dev/ttyUSB0
 BAUD_RATE=9600
+
+# fqbn: $(BOARD):$(BOARD_TYPE)
+BOARD=esp8266:esp8266
+BOARD_TYPE=nodemcuv2
 
 args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
 
