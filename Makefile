@@ -8,11 +8,13 @@ BOARD_TYPE=nodemcuv2
 PORT=/dev/ttyUSB0
 BAUD_RATE=9600
 
+args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
+
 build:
 	arduino-cli compile --fqbn $(BOARD):$(BOARD_TYPE) --libraries $(LIBRARIES) $(PROJECT_NAME)
 
 build-test:
-	arduino-cli compile --fqbn $(BOARD):$(BOARD_TYPE) --libraries $(LIBRARIES) test
+	arduino-cli compile --fqbn $(BOARD):$(BOARD_TYPE) --libraries $(LIBRARIES) $(LIBRARIES)/$(call args)
 
 upload:
 	sudo chmod 666 $(PORT)
@@ -20,7 +22,7 @@ upload:
 
 upload-test:
 	sudo chmod 666 $(PORT)
-	arduino-cli upload -p $(PORT) --fqbn $(BOARD):$(BOARD_TYPE) test
+	arduino-cli upload -p $(PORT) --fqbn $(BOARD):$(BOARD_TYPE) $(LIBRARIES)/$(call args)
 
 init:
 	arduino-cli config init
