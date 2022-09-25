@@ -12,7 +12,7 @@ void Board::Pin::log() const {
   Serial.println(_data);
 }
 
-Board::AnalogPin::AnalogPin(int pin, const Pin::Mode& mode)
+Board::AnalogPin::AnalogPin(int pin, Pin::Mode mode)
   : Board::Pin(pin) {
   pinMode(_pin, mode == AnalogPin::INPUT_MODE ? INPUT : OUTPUT);
 }
@@ -27,7 +27,7 @@ void Board::AnalogPin::low() {
   analogWrite(_pin, LOW);
 }
 
-Board::DigitalPin::DigitalPin(int pin, const Pin::Mode& mode)
+Board::DigitalPin::DigitalPin(int pin, Pin::Mode mode)
   : Board::Pin(pin) {
   pinMode(_pin, mode == DigitalPin::INPUT_MODE ? INPUT : OUTPUT);
 }

@@ -31,7 +31,7 @@ private:
 
 class AnalogPin : public Pin {
 public:
-  AnalogPin(int pin, const Pin::Mode&);
+  AnalogPin(int pin, Pin::Mode);
 
   void high() final override;
   void low() final override;
@@ -42,7 +42,7 @@ private:
 
 class DigitalPin : public Pin {
 public:
-  DigitalPin(int pin, const Pin::Mode&);
+  DigitalPin(int pin, Pin::Mode);
 
   void high() final override;
   void low() final override;
