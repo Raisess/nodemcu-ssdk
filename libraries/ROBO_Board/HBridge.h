@@ -1,22 +1,23 @@
 #ifndef HBridge_h
 #define HBridge_h
 
+#include <cstdint>
 #include "Pin.h"
 
 namespace Board {
 
 class HBridge {
 public:
-  HBridge(int left, int right);
+  HBridge(uint8_t left, uint8_t right);
 
   void log() const;
   void forward();
-  void reverse();
+  void backward();
   void stop();
 
 private:
-  DigitalPin _left;
-  DigitalPin _right;
+  DigitalPin left;
+  DigitalPin right;
 };
 
 }
