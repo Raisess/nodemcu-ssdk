@@ -1,6 +1,8 @@
 #ifndef Pin_h
 #define Pin_h
 
+#include <cstdint>
+
 namespace Board {
 
 class Pin {
@@ -18,37 +20,29 @@ protected:
     HIGH_DATA,
   };
 
-  Data _data = Data::LOW_DATA;
+  uint8_t pin;
+  Data data = Data::LOW_DATA;
 
-  Pin(int pin);
+  Pin(uint8_t pin);
 
   virtual void high() = 0;
   virtual void low() = 0;
-
-private:
-  int _pin;
 };
 
 class AnalogPin : public Pin {
 public:
-  AnalogPin(int pin, Pin::Mode);
+  AnalogPin(uint8_t pin, Pin::Mode);
 
   void high() final override;
   void low() final override;
-
-private:
-  unsigned int _pin;
 };
 
 class DigitalPin : public Pin {
 public:
-  DigitalPin(int pin, Pin::Mode);
+  DigitalPin(uint8_t pin, Pin::Mode);
 
   void high() final override;
   void low() final override;
-
-private:
-  unsigned int _pin;
 };
 
 }
