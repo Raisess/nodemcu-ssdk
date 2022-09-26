@@ -12,7 +12,7 @@ public:
   const char* c_str() const;
 
 private:
-  const char* _str;
+  const char* str;
 };
 
 }
