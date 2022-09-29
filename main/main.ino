@@ -11,5 +11,5 @@ void setup() {
 
 void loop() {
   SerialIO::Print(greetings.c_str(), true);
-  BoardIO::Delay(1000);
+  Time::Delay(1000);
 }

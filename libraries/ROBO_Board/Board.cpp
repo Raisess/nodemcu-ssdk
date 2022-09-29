@@ -31,10 +31,6 @@ void Board::SerialIO::Print(float value, bool new_line) {
   serial_print<float>(value, new_line);
 }
 
-void Board::BoardIO::Delay(uint16_t ms) {
-  delay(ms);
-}
-
 void Board::BoardIO::SetPin(uint8_t pin, BoardIO::Mode mode) {
   pinMode(pin, mode == BoardIO::Mode::_INPUT ? INPUT : OUTPUT);
 }
@@ -53,4 +49,8 @@ uint8_t Board::BoardIO::DigitalRead(uint8_t pin) {
 
 void Board::BoardIO::DigitalWrite(uint8_t pin, Data data) {
   digitalWrite(pin, data);
+}
+
+void Board::Time::Delay(uint16_t value) {
+  delay(value);
 }

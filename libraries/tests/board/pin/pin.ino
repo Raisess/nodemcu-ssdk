@@ -12,8 +12,8 @@ void setup() {
 void loop() {
   pin.high();
   pin.log();
-  BoardIO::Delay(1000);
+  Time::Delay(1000);
   pin.low();
   pin.log();
-  BoardIO::Delay(1000);
+  Time::Delay(1000);
 }

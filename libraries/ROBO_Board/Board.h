@@ -29,12 +29,16 @@ public:
     _HIGH = 255,
   };
 
-  static void Delay(uint16_t ms);
   static void SetPin(uint8_t, Mode);
   static uint16_t AnalogRead(uint8_t);
   static void AnalogWrite(uint8_t, Data);
   static uint8_t DigitalRead(uint8_t);
   static void DigitalWrite(uint8_t, Data);
+};
+
+class Time {
+public:
+  static void Delay(uint16_t);
 };
 
 }
