@@ -6,8 +6,8 @@
 
 #include "Board.h"
 
-void Board::SerialIO::Init(Boards board) {
-  Serial.begin(board);
+void Board::SerialIO::Init(Rate baud_rate) {
+  Serial.begin(baud_rate);
 }
 
 template<typename T>

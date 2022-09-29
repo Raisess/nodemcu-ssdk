@@ -7,11 +7,12 @@ namespace Board {
 
 class SerialIO {
 public:
-  enum Boards {
+  enum Rate {
     _ESP8266 = 9600,
+    _UNO = 9600,
   };
 
-  static void Init(Boards);
+  static void Init(Rate baud_rate);
   static void Print(const char*, bool new_line = false);
   static void Print(int, bool new_line = false);
   static void Print(float, bool new_line = false);

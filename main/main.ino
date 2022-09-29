@@ -6,7 +6,7 @@ using namespace Board;
 Core::String greetings = "Hello from esp8266!";
 
 void setup() {
-  SerialIO::Init(SerialIO::Boards::_ESP8266);
+  SerialIO::Init(SerialIO::Rate::_ESP8266);
 }
 
 void loop() {
