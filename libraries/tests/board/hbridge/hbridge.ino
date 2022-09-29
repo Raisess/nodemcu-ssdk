@@ -13,4 +13,7 @@ void loop() {
   bridge.forward();
   bridge.log();
   BoardIO::Delay(1000);
+  bridge.backward();
+  bridge.log();
+  BoardIO::Delay(1000);
 }

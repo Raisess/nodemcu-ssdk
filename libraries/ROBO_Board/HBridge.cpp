@@ -8,7 +8,7 @@ Board::HBridge::HBridge(uint8_t left, uint8_t right)
 void Board::HBridge::log() const {
   SerialIO::Print("Left: ");
   this->left.log();
-  SerialIO::Print("Left: ");
+  SerialIO::Print("Right: ");
   this->right.log();
 }
 
