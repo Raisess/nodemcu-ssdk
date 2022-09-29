@@ -12,8 +12,9 @@ public:
   };
 
   static void Init(Boards);
-  static void Print(const char*);
-  static void Println(const char*);
+  static void Print(const char*, bool new_line = false);
+  static void Print(int, bool new_line = false);
+  static void Print(float, bool new_line = false);
 };
 
 class BoardIO {

@@ -10,6 +10,6 @@ void setup() {
 }
 
 void loop() {
-  SerialIO::Println(greetings.c_str());
+  SerialIO::Print(greetings.c_str(), true);
   BoardIO::Delay(1000);
 }

@@ -5,12 +5,25 @@ void Board::SerialIO::Init(Boards board) {
   Serial.begin(board);
 }
 
-void Board::SerialIO::Print(const char* str) {
-  Serial.print(str);
+template<typename T>
+void serial_print(T value, bool new_line) {
+  if (new_line) {
+    Serial.println(value);
+  } else {
+    Serial.print(value);
+  }
 }
 
-void Board::SerialIO::Println(const char* str) {
-  Serial.println(str);
+void Board::SerialIO::Print(const char* value, bool new_line) {
+  serial_print<const char*>(value, new_line);
+}
+
+void Board::SerialIO::Print(int value, bool new_line) {
+  serial_print<int>(value, new_line);
+}
+
+void Board::SerialIO::Print(float value, bool new_line) {
+  serial_print<float>(value, new_line);
 }
 
 void Board::BoardIO::Delay(uint16_t ms) {

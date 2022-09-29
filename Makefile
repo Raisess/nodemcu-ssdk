@@ -9,6 +9,8 @@ BAUD_RATE=9600
 # fqbn: $(BOARD):$(BOARD_TYPE)
 BOARD=esp8266:esp8266
 BOARD_TYPE=nodemcuv2
+#BOARD=arduino:samd
+#BOARD_TYPE=mkr1000
 
 args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
 
@@ -37,6 +39,9 @@ install:
 
 boards:
 	arduino-cli board list
+
+cores:
+	arduino-cli core list
 
 serial:
 	sudo chmod 666 $(PORT)

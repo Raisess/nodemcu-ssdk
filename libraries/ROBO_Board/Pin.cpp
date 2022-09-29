@@ -6,9 +6,9 @@ Board::Pin::Pin(uint8_t pin, BoardIO::Mode mode) : pin(pin) {
 
 void Board::Pin::log() const {
   SerialIO::Print("Pin: ");
-  SerialIO::Print((const char *) this->pin);
+  SerialIO::Print(this->pin);
   SerialIO::Print(" | Data: ");
-  SerialIO::Println((const char *) this->data);
+  SerialIO::Print(this->data, true);
 }
 
 Board::AnalogPin::AnalogPin(uint8_t pin, BoardIO::Mode mode)
