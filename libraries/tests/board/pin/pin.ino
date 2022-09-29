@@ -1,15 +1,19 @@
+#include <Board.h>
 #include <Pin.h>
 
-Board::DigitalPin pin(10, Board::Pin::INPUT_MODE);
+using namespace Board;
+
+DigitalPin pin(10, BoardIO::Mode::_OUTPUT);
 
 void setup() {
-  Serial.begin(9600);
+  SerialIO::Init(SerialIO::Boards::_ESP8266);
 }
 
 void loop() {
   pin.high();
   pin.log();
-  delay(1000);
+  BoardIO::Delay(1000);
   pin.low();
   pin.log();
+  BoardIO::Delay(1000);
 }

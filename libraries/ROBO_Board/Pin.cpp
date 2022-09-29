@@ -1,41 +1,38 @@
-#include "Arduino.h"
 #include "Pin.h"
 
-Board::Pin::Pin(uint8_t pin) : pin(pin) {}
+Board::Pin::Pin(uint8_t pin, BoardIO::Mode mode) : pin(pin) {
+  BoardIO::SetPin(pin, mode);
+}
 
 void Board::Pin::log() const {
-  Serial.print("Pin: ");
-  Serial.print(this->pin);
-  Serial.print(" | Data: ");
-  Serial.println(this->data);
+  SerialIO::Print("Pin: ");
+  SerialIO::Print((const char *) this->pin);
+  SerialIO::Print(" | Data: ");
+  SerialIO::Println((const char *) this->data);
 }
 
-Board::AnalogPin::AnalogPin(uint8_t pin, Pin::Mode mode)
-  : Board::Pin(pin) {
-  pinMode(pin, mode == AnalogPin::INPUT_MODE ? INPUT : OUTPUT);
-}
+Board::AnalogPin::AnalogPin(uint8_t pin, BoardIO::Mode mode)
+  : Pin(pin, mode) {}
 
 void Board::AnalogPin::high() {
-  this->data = Pin::HIGH_DATA;
-  analogWrite(this->pin, HIGH);
+  this->data = BoardIO::Data::_HIGH;
+  BoardIO::AnalogWrite(this->pin, BoardIO::Data::_HIGH);
 }
 
 void Board::AnalogPin::low() {
-  this->data = Pin::LOW_DATA;
-  analogWrite(this->pin, LOW);
+  this->data = BoardIO::Data::_LOW;
+  BoardIO::AnalogWrite(this->pin, BoardIO::Data::_LOW);
 }
 
-Board::DigitalPin::DigitalPin(uint8_t pin, Pin::Mode mode)
-  : Board::Pin(pin) {
-  pinMode(pin, mode == DigitalPin::INPUT_MODE ? INPUT : OUTPUT);
-}
+Board::DigitalPin::DigitalPin(uint8_t pin, BoardIO::Mode mode)
+  : Pin(pin, mode) {}
 
 void Board::DigitalPin::high() {
-  this->data = Pin::HIGH_DATA;
-  digitalWrite(this->pin, HIGH);
+  this->data = BoardIO::Data::_HIGH;
+  BoardIO::DigitalWrite(this->pin, BoardIO::Data::_HIGH);
 }
 
 void Board::DigitalPin::low() {
-  this->data = Pin::LOW_DATA;
-  digitalWrite(this->pin, LOW);
+  this->data = BoardIO::Data::_LOW;
+  BoardIO::DigitalWrite(this->pin, BoardIO::Data::_LOW);
 }

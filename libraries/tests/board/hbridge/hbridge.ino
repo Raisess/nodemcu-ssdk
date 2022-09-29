@@ -1,13 +1,16 @@
+#include <Board.h>
 #include <HBridge.h>
 
-Board::HBridge bridge(10, 5);
+using namespace Board;
+
+HBridge bridge(10, 5);
 
 void setup() {
-  Serial.begin(9600);
+  SerialIO::Init(SerialIO::Boards::_ESP8266);
 }
 
 void loop() {
   bridge.forward();
   bridge.log();
-  delay(1000);
+  BoardIO::Delay(1000);
 }

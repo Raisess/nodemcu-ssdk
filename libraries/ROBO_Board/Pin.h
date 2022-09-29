@@ -2,28 +2,19 @@
 #define Pin_h
 
 #include <cstdint>
+#include "Board.h"
 
 namespace Board {
 
 class Pin {
 public:
-  enum Mode {
-    INPUT_MODE = 1,
-    OUTPUT_MODE,
-  };
-
   void log() const;
 
 protected:
-  enum Data {
-    LOW_DATA = 0,
-    HIGH_DATA,
-  };
-
   uint8_t pin;
-  Data data = Data::LOW_DATA;
+  BoardIO::Data data = BoardIO::Data::_LOW;
 
-  Pin(uint8_t pin);
+  Pin(uint8_t pin, BoardIO::Mode);
 
   virtual void high() = 0;
   virtual void low() = 0;
@@ -31,7 +22,7 @@ protected:
 
 class AnalogPin : public Pin {
 public:
-  AnalogPin(uint8_t pin, Pin::Mode);
+  AnalogPin(uint8_t pin, BoardIO::Mode);
 
   void high() final override;
   void low() final override;
@@ -39,7 +30,7 @@ public:
 
 class DigitalPin : public Pin {
 public:
-  DigitalPin(uint8_t pin, Pin::Mode);
+  DigitalPin(uint8_t pin, BoardIO::Mode);
 
   void high() final override;
   void low() final override;

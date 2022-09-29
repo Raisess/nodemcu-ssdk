@@ -1,14 +1,14 @@
-#include "Arduino.h"
+#include "Board.h"
 #include "HBridge.h"
 
 Board::HBridge::HBridge(uint8_t left, uint8_t right)
-  : left(left, Pin::Mode::OUTPUT_MODE),
-    right(right, Pin::Mode::OUTPUT_MODE) {}
+  : left(left, BoardIO::Mode::_OUTPUT),
+    right(right, BoardIO::Mode::_OUTPUT) {}
 
 void Board::HBridge::log() const {
-  Serial.print("Left: ");
+  SerialIO::Print("Left: ");
   this->left.log();
-  Serial.print("Right: ");
+  SerialIO::Print("Left: ");
   this->right.log();
 }
 
