@@ -5,6 +5,7 @@ You also can use with arduino boards or others esp boards, just with some little
 
 ## Dependencies
 
+- [CLI Creator](https://github.com/Raisess/cli-creator)
 - [Arduino CLI](https://github.com/arduino/arduino-cli)
 - [Picocom](https://github.com/npat-efault/picocom)
 

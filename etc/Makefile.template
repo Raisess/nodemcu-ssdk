@@ -50,22 +50,3 @@ cores:
 serial:
 	sudo chmod 666 $(PORT)
 	picocom -b $(BAUD_RATE) $(PORT)
-
-# UTILS
-install-required:
-	make install -C ./robo-cli
-	sudo mkdir -p $(LIB_PATH)
-	sudo cp -r $(LOCAL_LIB_PATH)/ROBO_* $(LIB_PATH)
-	sudo mkdir -p /usr/local/etc/robo
-	sudo cp -r ./main /usr/local/etc/robo
-	sudo cp ./etc/LICENSE.template /usr/local/etc/robo/LICENSE
-	sudo cp ./etc/README.md.template /usr/local/etc/robo/README.md
-	sudo cp ./etc/Makefile.template /usr/local/etc/robo/Makefile
-
-# CLI
-build-cli:
-	make clean -C ./robo-cli
-	make -C ./robo-cli
-
-install-cli:
-	make install -C ./robo-cli
