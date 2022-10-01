@@ -47,10 +47,18 @@ Edit the `main/main.ino`, do the last step again. :)
 
 ### Using the robo-cli
 
+Building and installing:
+
 ```shell
 make build-cli
 make install-cli
 make install-required
+```
+
+Usage:
+
+```shell
+robo-cli --init=project-name
 ```
 
 ## ESP8266
