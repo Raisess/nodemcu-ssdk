@@ -8,6 +8,9 @@ auto init = [](Arguments args) {
   auto project_name = args[0];
 
   std::system(("cp -r /usr/local/etc/robo ./" + project_name).c_str());
+  std::cout << "Created new robo project: " + project_name << std::endl;
+  std::cout << "\t cd " + project_name << std::endl;
+  std::cout << "\t make && make upload" << std::endl;
 
   return 0;
 };

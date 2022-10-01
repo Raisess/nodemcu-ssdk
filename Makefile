@@ -1,10 +1,10 @@
 PROJECT_NAME=main
 
-LOCAL_LIB_PATH=./libraries
 LIB_PATH=/usr/local/include/robo
+LOCAL_LIB_PATH=./libraries
 
 # use "," to add another lib paths
-LIBRARIES=$(LIB_PATH)
+LIBRARIES=$(LOCAL_LIB_PATH)
 
 PORT=/dev/ttyUSB0
 BAUD_RATE=9600

@@ -1,6 +1,5 @@
 PROJECT_NAME=main
 
-LOCAL_LIB_PATH=./libraries
 LIB_PATH=/usr/local/include/robo
 
 # use "," to add another lib paths

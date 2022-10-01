@@ -45,6 +45,14 @@ make serial
 
 Edit the `main/main.ino`, do the last step again. :)
 
+### Using the robo-cli
+
+```shell
+make build-cli
+make install-cli
+make install-required
+```
+
 ## ESP8266
 
 The main target of this project.
