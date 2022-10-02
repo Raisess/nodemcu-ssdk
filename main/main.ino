@@ -1,9 +1,9 @@
 #include <Board.h>
-#include <String.h>
+#include <string>
 
 using namespace Board;
 
-Core::String greetings = "Hello from esp8266!";
+std::string greetings = "Hello from esp8266!";
 
 void setup() {
   SerialIO::Init(SerialIO::Rate::_ESP8266);
