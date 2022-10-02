@@ -24,6 +24,7 @@ Configuration setup:
 
 ```shell
 make init
+make install-required
 ```
 
 - add the esp8266 board core url `https://arduino.esp8266.com/stable/package_esp8266com_index.json`
@@ -52,7 +53,6 @@ Building and installing:
 ```shell
 make build-cli
 make install-cli
-make install-required
 ```
 
 Usage:
