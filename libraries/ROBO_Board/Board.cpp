@@ -1,7 +1,9 @@
-#if ARDUINO >= 100
+#if ARDUINO && ARDUINO >= 100
 #include "Arduino.h"
-#else
+#elif ARDUINO && ARDUINO < 100
 #include "WProgram.h"
+#else
+#include <robo/emulator/Emulator.h>
 #endif
 
 #include "Board.h"

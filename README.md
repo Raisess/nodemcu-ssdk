@@ -61,6 +61,13 @@ Usage:
 robo-cli --init=project-name
 ```
 
+### Using the robo-emulator (preview)
+
+```shell
+cd ./tools/robo-emulator
+./src/main.py ../../main/main.ino
+```
+
 ## ESP8266
 
 The main target of this project.

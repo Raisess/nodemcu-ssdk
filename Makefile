@@ -56,6 +56,8 @@ install-required:
 	make install -C ./tools/robo-cli
 	sudo mkdir -p $(LIB_PATH)
 	sudo cp -r $(LOCAL_LIB_PATH)/ROBO_* $(LIB_PATH)
+	sudo mkdir -p /usr/local/include/robo/emulator
+	sudo cp -r ./tools/robo-emulator/cpp-lib/include/* /usr/local/include/robo/emulator
 	sudo mkdir -p /usr/local/etc/robo
 	sudo cp -r ./main /usr/local/etc/robo
 	sudo cp ./etc/LICENSE.template /usr/local/etc/robo/LICENSE
