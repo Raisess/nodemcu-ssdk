@@ -53,7 +53,7 @@ serial:
 
 # UTILS
 install-required:
-	make install -C ./robo-cli
+	make install -C ./tools/robo-cli
 	sudo mkdir -p $(LIB_PATH)
 	sudo cp -r $(LOCAL_LIB_PATH)/ROBO_* $(LIB_PATH)
 	sudo mkdir -p /usr/local/etc/robo
@@ -64,8 +64,8 @@ install-required:
 
 # CLI
 build-cli:
-	make clean -C ./robo-cli
-	make -C ./robo-cli
+	make clean -C ./tools/robo-cli
+	make -C ./tools/robo-cli
 
 install-cli:
-	make install -C ./robo-cli
+	make install -C ./tools/robo-cli
