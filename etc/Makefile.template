@@ -24,15 +24,6 @@ upload:
 	sudo chmod 666 $(PORT)
 	arduino-cli upload -p $(PORT) --fqbn $(BOARD):$(BOARD_TYPE) $(call args,$(PROJECT_NAME))
 
-# -- e.g.: build-test board/pin
-build-test:
-	arduino-cli compile --clean --fqbn $(BOARD):$(BOARD_TYPE) --libraries $(LIBRARIES) $(LIBRARIES)/tests/$(call args)
-
-# -- e.g.: upload-test board/pin
-upload-test:
-	sudo chmod 666 $(PORT)
-	arduino-cli upload -p $(PORT) --fqbn $(BOARD):$(BOARD_TYPE) $(LIBRARIES)/tests/$(call args)
-
 init:
 	arduino-cli config init
 
