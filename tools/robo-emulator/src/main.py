@@ -7,8 +7,8 @@ import os
 
 CXX = "clang++"
 LIB_PATH = "/usr/local/include/robo"
-LIB_INCLUDE = f"-I{LIB_PATH}/ROBO_Board"
-LIB_SRC = f"{LIB_PATH}/ROBO_Board/*.cpp"
+LIB_INCLUDE = f"-I{LIB_PATH}/Board"
+LIB_SRC = f"{LIB_PATH}/Board/*.cpp"
 
 BUILD_DIR = "./build"
 BUILD_OUT = BUILD_DIR + "/main.o"
