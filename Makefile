@@ -4,7 +4,7 @@ LIB_PATH=/usr/local/include/robo
 LOCAL_LIB_PATH=./libraries
 
 # use "," to add another lib paths
-LIBRARIES=$(LOCAL_LIB_PATH)
+LIBRARIES=$(LOCAL_LIB_PATH),~/Arduino/libraries
 
 PORT=/dev/ttyUSB0
 BAUD_RATE=9600
@@ -46,6 +46,14 @@ boards:
 
 cores:
 	arduino-cli core list
+
+# -- e.g.: search-lib FTDebouncer
+search-lib:
+	arduino-cli lib search $(call args)
+
+# -- e.g.: install-lib FTDebouncer
+install-lib:
+	arduino-cli lib install $(call args)
 
 serial:
 	sudo chmod 666 $(PORT)
