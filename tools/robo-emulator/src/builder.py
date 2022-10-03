@@ -6,8 +6,8 @@ class Builder:
     self.input = input
     self.lib = lib
 
-    os.system(f"rm -rf ./build")
-    os.system(f"mkdir -p ./build")
+    os.system("rm -rf ./build")
+    os.system("mkdir -p ./build")
 
   def compile(self):
     self._prepare_file()
