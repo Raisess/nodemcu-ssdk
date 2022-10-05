@@ -13,7 +13,6 @@ if __name__ == "__main__":
   print("\t\tRunning with ROBO Emulator\n")
 
   lib = ctypes.cdll.LoadLibrary("./build/main.so")
-
   lib.setup()
   while True:
     lib.loop()
