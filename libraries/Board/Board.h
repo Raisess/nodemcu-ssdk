@@ -1,6 +1,7 @@
 #ifndef Board_h
 #define Board_h
 
+#include <cstddef>
 #include <cstdint>
 
 namespace Board {
@@ -13,9 +14,11 @@ public:
   };
 
   static void Init(Rate baud_rate);
-  static void Print(const char*, bool new_line = false);
-  static void Print(int, bool new_line = false);
-  static void Print(float, bool new_line = false);
+  static void Print(const char* value, bool new_line = false);
+  static void Print(int value, bool new_line = false);
+  static void Print(float value, bool new_line = false);
+  static void Write(const char* buf);
+  static char* Read(size_t buf_size);
 };
 
 class BoardIO {
