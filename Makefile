@@ -27,12 +27,12 @@ upload:
 
 # -- e.g.: build-test board/pin
 build-test:
-	arduino-cli compile --clean --fqbn $(BOARD):$(BOARD_TYPE) --libraries $(LIBRARIES) $(LIBRARIES)/tests/$(call args)
+	arduino-cli compile --clean --fqbn $(BOARD):$(BOARD_TYPE) --libraries $(LIBRARIES) $(LOCAL_LIB_PATH)/tests/$(call args)
 
 # -- e.g.: upload-test board/pin
 upload-test:
 	sudo chmod 666 $(PORT)
-	arduino-cli upload -p $(PORT) --fqbn $(BOARD):$(BOARD_TYPE) $(LIBRARIES)/tests/$(call args)
+	arduino-cli upload -p $(PORT) --fqbn $(BOARD):$(BOARD_TYPE) $(LOCAL_LIB_PATH)/tests/$(call args)
 
 init:
 	arduino-cli config init

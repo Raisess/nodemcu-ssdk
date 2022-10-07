@@ -15,7 +15,7 @@ uint16_t analogRead(uint8_t) {
   return 1;
 }
 
-void analogWrite(uint8_t pin, uint16_t data) {
+void analogWrite(uint8_t pin, uint8_t data) {
   std::cout << "\x1b[33m>> LOG:\x1b[0m Set analog pin: " << unsigned(pin)
             << ", to: " << unsigned(data) << std::endl;
 }
@@ -24,7 +24,7 @@ uint8_t digitalRead(uint8_t) {
   return 1;
 }
 
-void digitalWrite(uint8_t pin, uint16_t data) {
+void digitalWrite(uint8_t pin, uint8_t data) {
   std::cout << "\x1b[33m>> LOG:\x1b[0m Set digital pin: " << unsigned(pin)
             << ", to: " << unsigned(data) << std::endl;
 }
