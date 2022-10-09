@@ -3,10 +3,10 @@
 
 using namespace Board;
 
-DigitalPin pin(10, BoardIO::Mode::_OUTPUT);
+DigitalPin pin(10, Pin::Mode::_OUTPUT);
 
 void setup() {
-  SerialIO::Init(SerialIO::Rate::_ESP8266);
+  SerialIO::Init(9600);
 }
 
 void loop() {

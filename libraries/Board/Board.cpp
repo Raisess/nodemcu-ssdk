@@ -10,7 +10,7 @@
 
 // -- SerialIO
 
-void Board::SerialIO::Init(Rate baud_rate) {
+void Board::SerialIO::Init(uint16_t baud_rate) {
   Serial.begin(baud_rate);
 }
 
@@ -47,15 +47,15 @@ char* Board::SerialIO::Read(size_t buf_size) {
 
 // -- BoardIO
 
-void Board::BoardIO::SetPin(uint8_t pin, BoardIO::Mode mode) {
-  pinMode(pin, mode == BoardIO::Mode::_INPUT ? INPUT : OUTPUT);
+void Board::BoardIO::SetPin(uint8_t pin, uint8_t mode) {
+  pinMode(pin, mode == 1 ? INPUT : OUTPUT);
 }
 
 uint16_t Board::BoardIO::AnalogRead(uint8_t pin) {
   return analogRead(pin);
 }
 
-void Board::BoardIO::AnalogWrite(uint8_t pin, Data data) {
+void Board::BoardIO::AnalogWrite(uint8_t pin, uint8_t data) {
   analogWrite(pin, data);
 }
 
@@ -63,7 +63,7 @@ uint8_t Board::BoardIO::DigitalRead(uint8_t pin) {
   return digitalRead(pin);
 }
 
-void Board::BoardIO::DigitalWrite(uint8_t pin, Data data) {
+void Board::BoardIO::DigitalWrite(uint8_t pin, uint8_t data) {
   digitalWrite(pin, data);
 }
 

@@ -8,13 +8,23 @@ namespace Board {
 
 class Pin {
 public:
+  enum Mode {
+    _INPUT = 1,
+    _OUTPUT,
+  };
+
+  enum Data {
+    _LOW = 0,
+    _HIGH = 255,
+  };
+
   void log() const;
 
 protected:
   uint8_t pin;
-  BoardIO::Data data = BoardIO::Data::_LOW;
+  Data data = Data::_LOW;
 
-  Pin(uint8_t pin, BoardIO::Mode);
+  Pin(uint8_t pin, Mode);
 
   virtual void high() = 0;
   virtual void low() = 0;
@@ -22,7 +32,7 @@ protected:
 
 class AnalogPin : public Pin {
 public:
-  AnalogPin(uint8_t pin, BoardIO::Mode);
+  AnalogPin(uint8_t pin, Mode);
 
   void high() final override;
   void low() final override;
@@ -30,7 +40,7 @@ public:
 
 class DigitalPin : public Pin {
 public:
-  DigitalPin(uint8_t pin, BoardIO::Mode);
+  DigitalPin(uint8_t pin, Mode);
 
   void high() final override;
   void low() final override;

@@ -2,8 +2,8 @@
 #include "HBridge.h"
 
 Board::HBridge::HBridge(uint8_t left, uint8_t right)
-  : left(left, BoardIO::Mode::_OUTPUT),
-    right(right, BoardIO::Mode::_OUTPUT) {}
+  : left(left, Pin::Mode::_OUTPUT),
+    right(right, Pin::Mode::_OUTPUT) {}
 
 void Board::HBridge::log() const {
   SerialIO::Print("Left: ");

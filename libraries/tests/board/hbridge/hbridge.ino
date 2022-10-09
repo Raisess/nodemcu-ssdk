@@ -6,7 +6,7 @@ using namespace Board;
 HBridge bridge(10, 5);
 
 void setup() {
-  SerialIO::Init(SerialIO::Rate::_ESP8266);
+  SerialIO::Init(9600);
 }
 
 void loop() {
