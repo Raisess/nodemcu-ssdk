@@ -1,6 +1,6 @@
 # ROBO
 
-A simple "framework" to make the life easier when using `arduino-cli` and esp8266 boards.
+A simple "framework" to make the life easier when working with esp8266 boards.
 You also can use with arduino boards or others esp boards, just with some little changes at the `Makefile`.
 
 ## Dependencies
