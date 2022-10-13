@@ -1,10 +1,10 @@
 PROJECT_NAME=main
 
+SRC=./src
 LIB_PATH=/usr/local/include/robo
-LOCAL_LIB_PATH=./libraries
 
 # use "," to add another lib paths
-LIBRARIES=$(LOCAL_LIB_PATH),~/Arduino/libraries
+LIBRARIES=$(SRC),~/Arduino/libraries
 
 PORT=/dev/ttyUSB0
 BAUD_RATE=9600
@@ -27,12 +27,12 @@ upload:
 
 # -- e.g.: build-test board/pin
 build-test:
-	arduino-cli compile --clean --fqbn $(BOARD):$(BOARD_TYPE) --libraries $(LIBRARIES) $(LOCAL_LIB_PATH)/tests/$(call args)
+	arduino-cli compile --clean --fqbn $(BOARD):$(BOARD_TYPE) --libraries $(LIBRARIES) $(SRC)/tests/$(call args)
 
 # -- e.g.: upload-test board/pin
 upload-test:
 	sudo chmod 666 $(PORT)
-	arduino-cli upload -p $(PORT) --fqbn $(BOARD):$(BOARD_TYPE) $(LOCAL_LIB_PATH)/tests/$(call args)
+	arduino-cli upload -p $(PORT) --fqbn $(BOARD):$(BOARD_TYPE) $(SRC)/tests/$(call args)
 
 init:
 	arduino-cli config init
@@ -62,7 +62,7 @@ serial:
 # UTILS
 install-required:
 	sudo mkdir -p $(LIB_PATH)
-	sudo cp -r $(LOCAL_LIB_PATH)/* $(LIB_PATH)
+	sudo cp -r $(SRC)/* $(LIB_PATH)
 	sudo mkdir -p /usr/local/include/robo/emulator
 	sudo cp -r ./tools/robo-emulator/cpp-lib/include/* /usr/local/include/robo/emulator
 	sudo mkdir -p /usr/local/etc/robo
