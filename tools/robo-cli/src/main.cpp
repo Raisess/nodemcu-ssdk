@@ -18,7 +18,7 @@ auto init = [](Arguments args) {
 int main(int argc, char* argv[]) {
   Cli cli;
 
-  cli.commands["--init"] = init;
+  cli.commands["init"] = init;
 
   return cli.handle(argc, argv);
 }

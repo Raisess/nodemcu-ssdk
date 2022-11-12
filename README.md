@@ -58,7 +58,7 @@ make install-cli
 Usage:
 
 ```shell
-robo-cli --init=project-name
+robo-cli init project-name
 ```
 
 ### Using the robo-emulator (preview)
